@@ -1,28 +1,29 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import React, {useState, useEffect} from 'react';
 import moment from 'moment';
 import Link from 'next/link';
 
-import { getRecentPosts, getSimilarPost} from '../services';
+import { getRecentPosts, getSimilarPosts} from '../services';
 
-const PostWidget = ({ categories, slugs}) => {
+const PostWidget = ({ categories, slug}) => {
   const [relatedPosts, setrelatedPosts] = useState([]);
 
   useEffect(() => {
-    if(slugs){
-      getSimilarPost(categories, slugs)
+    if(slug){
+      getSimilarPosts(categories, slug)
         .then((result) => setrelatedPosts(result))
     }  else {
       getRecentPosts()
         .then((result) => setrelatedPosts(result))
     }
-  },[slugs]);
+  },[categories, slug]);
 
 
   return (
     <div className=' bg-white shadow-lg rounded-lg p-8 mb-8'>
       <h3 className=' text-xl mb-8 font-semibold border-b pb-4 text-black'>
-        {slugs ? "Related Post" : "Recent Posts"}
+        {slug ? "Related Post" : "Recent Posts"}
       </h3>
       {relatedPosts.map((posts) => (
         <div key={posts.title} className='flex items-center w-full mb-4 text-black'>
@@ -38,7 +39,7 @@ const PostWidget = ({ categories, slugs}) => {
             <p className=' text-gray-500 text-xs'>
               {moment(posts.createdAt).format('MMM DD, YY')}
             </p>
-            <Link href={`/post/${posts.slugs}`} key={posts.title} className='text-sm'>
+            <Link href={`/post/${posts.slug}`} key={posts.title} className='text-sm'>
               {posts.title}
             </Link>
           </div>
