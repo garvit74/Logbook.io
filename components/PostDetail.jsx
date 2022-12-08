@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import React from 'react';
+
 import moment from 'moment';
 
 const PostDetail = ({ post }) => {
@@ -50,7 +50,7 @@ const PostDetail = ({ post }) => {
         </div>
         <div className="px-4 lg:px-0">
           <div className="flex items-center mb-8 w-full">
-            <div className="hidden md:flex items-center justify-center lg:mb-0 lg:w-auto mr-8 lg:items-center">
+            <div className="hidden md:flex items-center justify-center lg:mb-0 lg:w-auto mr-8 items-center">
               <img
                 alt={post.author.name}
                 height="30px"
@@ -67,12 +67,12 @@ const PostDetail = ({ post }) => {
               <span className="align-middle">{moment(post.createdAt).format('MMM DD, YYYY')}</span>
             </div>
           </div>
-          <h1 className="mb-8 text-3xl font-semibold text-black">{post.title}</h1>
-          <div className="text-black">{post.content.raw.children.map((typeObj, index) => {
+          <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
+          {post.content.raw.children.map((typeObj, index) => {
             const children = typeObj.children.map((item, itemindex) => getContentFragment(itemindex, item.text, item));
 
             return getContentFragment(index, children, typeObj, typeObj.type);
-          })}</div>
+          })}
         </div>
       </div>
 
