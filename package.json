@@ -1,6 +1,4 @@
 {
-  "name": "logbook.io",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,21 +7,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "graphql": "^16.5.0",
-    "graphql-request": "^4.3.0",
-    "html-react-parser": "^3.0.1",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.1.0",
+    "html-react-parser": "^3.0.6",
     "moment": "^2.29.4",
-    "next": "12.2.3",
+    "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-multi-carousel": "^2.8.2",
-    "sass": "^1.54.0"
+    "sass": "^1.57.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.7",
-    "eslint": "8.20.0",
-    "eslint-config-next": "12.2.3",
-    "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.6"
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.2.4",
+    "eslint":"8.30.0",
+    "eslint-config-next":"12.2.3"
   }
 }
