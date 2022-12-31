@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment/moment";
+import Image from "next/image";
 import Link from "next/link";
 
 import { getRecentPosts, getSimilarPosts } from "../services";
@@ -27,10 +28,11 @@ const PostWidget = ({ categories, slug }) => {
         {relatedPosts.map((post) => (
             <div key={post.title} className="flex items-center w-full mb-4">
                 <div className="w-16 flex-none">
-                    <img
+                    <Image
+                        unoptimized
                         alt={post.title}
-                        height="60px"
-                        width="60px"
+                        height="60"
+                        width="60"
                         className=" cursor-pointer align-middle rounded-full transition duration-1000 transform hover:-translate-y-3"
                         src={post.featuredImage.url}
                     /> 
