@@ -51,6 +51,7 @@ const PostDetail = ({ post }) => {
             alt={obj.title}
             height={obj.height}
             width={obj.width}
+            className="rounded-lg mx-auto"
             src={obj.src}
           />
         );
