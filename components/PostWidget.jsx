@@ -31,9 +31,9 @@ const PostWidget = ({ categories, slug }) => {
                     <Image
                         unoptimized
                         alt={post.title}
-                        height="60"
-                        width="60"
-                        className=" cursor-pointer align-middle rounded-lg transition duration-1000 transform hover:-translate-y-3"
+                        height="45"
+                        width="45"
+                        className=" cursor-pointer align-middle rounded-2xl transition duration-1000 transform hover:-translate-y-3"
                         src={post.featuredImage.url}
                     /> 
                 </div>
